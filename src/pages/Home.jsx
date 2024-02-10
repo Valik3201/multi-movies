@@ -91,7 +91,7 @@ const Home = () => {
   return (
     <div>
       <div
-        className="relative overflow-hidden rounded-lg bg-cover bg-no-repeat min-h-96 p-12 text-center rounded-lg mb-8"
+        className="relative overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat min-h-96 p-12 text-center rounded-lg mb-8"
         style={{ backgroundImage: `url(${firstMoviePoster})` }}
       >
         <div
