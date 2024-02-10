@@ -37,31 +37,30 @@ const Reviews = () => {
   return (
     <>
       {!isLoading && data.length === 0 && <AlertNoReviews />}
-      <div className="flex flex-col w-full max-w-5xl items-start gap-4 py-4">
+
+      <ul className="flex flex-col w-full max-w-5xl items-start gap-4 py-4">
         {data.map((review) => (
-          <ul key={review.id}>
-            <li>
-              <Card>
-                <CardHeader>
-                  <CardTitle>{review.author}</CardTitle>
-                  <CardDescription>
-                    {format(new Date(review.created_at), "HH:mm, MMMM d, yyyy")}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {/<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/.test(
-                    review.content
-                  ) ? (
-                    <p>{parse(review.content)}</p>
-                  ) : (
-                    <ReactMarkdown>{review.content}</ReactMarkdown>
-                  )}
-                </CardContent>
-              </Card>
-            </li>
-          </ul>
+          <li key={review.id} className="min-w-full">
+            <Card>
+              <CardHeader>
+                <CardTitle>{review.author}</CardTitle>
+                <CardDescription>
+                  {format(new Date(review.created_at), "HH:mm, MMMM d, yyyy")}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {/<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/.test(
+                  review.content
+                ) ? (
+                  <p>{parse(review.content)}</p>
+                ) : (
+                  <ReactMarkdown>{review.content}</ReactMarkdown>
+                )}
+              </CardContent>
+            </Card>
+          </li>
         ))}
-      </div>
+      </ul>
     </>
   );
 };
