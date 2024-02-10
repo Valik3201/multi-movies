@@ -11,6 +11,16 @@ import { Badge } from "@/components/ui/badge";
 import { Loader } from "@/components/Loader";
 import { AlertDestructive } from "@/components/Alert";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+import Cast from "@/components/Cast";
+import Reviews from "@/components/Reviews";
+
 const MovieDetails = () => {
   const { movieId } = useParams();
 
@@ -95,35 +105,24 @@ const MovieDetails = () => {
         </div>
       </div>
 
-      <ul className="flex flex-row gap-4 border-b pt-4 pb-2">
-        <li>
-          <NavLink
-            to="cast"
-            className={({ isActive }) =>
-              isActive
-                ? "scroll-m-20 text-2xl font-semibold tracking-tight"
-                : "scroll-m-20 text-2xl font-semibold tracking-tight text-muted-foreground transition hover:text-inherit"
-            }
-          >
-            Cast
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="reviews"
-            className={({ isActive }) =>
-              isActive
-                ? "scroll-m-20 text-2xl font-semibold tracking-tight"
-                : "scroll-m-20 text-2xl font-semibold tracking-tight text-muted-foreground transition hover:text-inherit"
-            }
-          >
-            Reviews
-          </NavLink>
-        </li>
-      </ul>
-      <Suspense fallback={<div>Loading subpage...</div>}>
-        <Outlet />
-      </Suspense>
+      <Accordion type="single" collapsible className="py-8">
+        <AccordionItem value="cast">
+          <AccordionTrigger>
+            <NavLink to="cast">Cast</NavLink>
+          </AccordionTrigger>
+          <AccordionContent>
+            <Cast />
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="reviews">
+          <AccordionTrigger>
+            <NavLink to="reviews">Reviews</NavLink>
+          </AccordionTrigger>
+          <AccordionContent>
+            <Reviews />
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 };

@@ -37,7 +37,7 @@ const Reviews = () => {
   return (
     <>
       {!isLoading && data.length === 0 && <AlertNoReviews />}
-      <div className="flex flex-col w-full max-w-5xl items-start gap-4 py-8">
+      <div className="flex flex-col w-full max-w-5xl items-start gap-4 py-4">
         {data.map((review) => (
           <ul key={review.id}>
             <li>
