@@ -16,7 +16,7 @@ import ModeToggle from "./mode-toggle";
 
 export const SharedLayout = () => {
   return (
-    <div className="container md:mx-auto pb-8">
+    <div className="container md:mx-auto pb-8 max-w-5xl">
       <header className="py-8">
         <nav>
           <NavigationMenu>
@@ -54,6 +54,7 @@ export const SharedLayout = () => {
           </NavigationMenu>
         </nav>
       </header>
+
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
