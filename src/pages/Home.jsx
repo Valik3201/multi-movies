@@ -40,10 +40,10 @@ const Home = () => {
   if (isLoading) {
     return (
       <>
-        <Skeleton className="h-12 w-full mb-8" />
+        <Skeleton className="h-96 w-full mb-8" />
         <div className="grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {[...Array(20)].map((_, index) => (
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2" key={index}>
               <Skeleton
                 key={index}
                 className="h-[270px] w-[180px] rounded-lg"
@@ -83,11 +83,28 @@ const Home = () => {
     }
   }
 
+  const firstMoviePoster =
+    data.results.length > 0
+      ? `https://image.tmdb.org/t/p/original${data.results[0].backdrop_path}`
+      : "";
+
   return (
     <div>
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl pb-8">
-        Trending Movies and TV Shows
-      </h1>
+      <div
+        className="relative overflow-hidden rounded-lg bg-cover bg-no-repeat min-h-96 p-12 text-center rounded-lg mb-8"
+        style={{ backgroundImage: `url(${firstMoviePoster})` }}
+      >
+        <div
+          className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+        >
+          <div className="flex h-full items-center justify-center">
+            <h1 className="text-white scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+              Trending Movies and TV Shows
+            </h1>
+          </div>
+        </div>
+      </div>
 
       <div className="grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {data.results.map((movie) => (
