@@ -1,16 +1,18 @@
-import { Suspense } from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
+import { Suspense } from "react";
+import { Outlet, NavLink } from "react-router-dom";
 
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from '@/components/ui/navigation-menu';
+} from "@/components/ui/navigation-menu";
 
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from "@/components/ui/button";
 
-import { HomeIcon, VideoIcon } from '@radix-ui/react-icons';
-import { Loader } from './Loader';
+import { HomeIcon, VideoIcon } from "@radix-ui/react-icons";
+import { Loader } from "./Loader";
+
+import ModeToggle from "./mode-toggle";
 
 export const SharedLayout = () => {
   return (
@@ -24,8 +26,8 @@ export const SharedLayout = () => {
                   to="/"
                   className={({ isActive }) =>
                     isActive
-                      ? buttonVariants({ variant: 'default' })
-                      : buttonVariants({ variant: 'outline' })
+                      ? buttonVariants({ variant: "default" })
+                      : buttonVariants({ variant: "outline" })
                   }
                 >
                   <HomeIcon className="mr-2 h-4 w-4" />
@@ -37,13 +39,16 @@ export const SharedLayout = () => {
                   to="/movies"
                   className={({ isActive }) =>
                     isActive
-                      ? buttonVariants({ variant: 'default' })
-                      : buttonVariants({ variant: 'outline' })
+                      ? buttonVariants({ variant: "default" })
+                      : buttonVariants({ variant: "outline" })
                   }
                 >
                   <VideoIcon className="mr-2 h-4 w-4" />
                   Movies
                 </NavLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <ModeToggle />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
