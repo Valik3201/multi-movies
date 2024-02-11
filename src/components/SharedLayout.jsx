@@ -1,18 +1,8 @@
 import { Suspense } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
 
-import { buttonVariants } from "@/components/ui/button";
-
-import { HomeIcon, VideoIcon } from "@radix-ui/react-icons";
 import { Loader } from "./Loader";
 import Footer from "./Footer";
 
@@ -21,38 +11,39 @@ import ModeToggle from "./mode-toggle";
 export const SharedLayout = () => {
   return (
     <div className="container md:mx-auto max-w-5xl">
-      <header className="py-8">
-        <nav className="flex justify-between">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
+      <header className="pb-8">
+        <nav className="flex justify-between border-b py-4">
+          <ul className="flex flex-wrap items-center mt-3 text-md font-medium sm:mt-0">
+            <li>
+              <Button variant="link" className="pl-0 hover:no-underline">
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
                     isActive
-                      ? buttonVariants({ variant: "default" })
-                      : buttonVariants({ variant: "outline" })
+                      ? ""
+                      : "text-muted-foreground transition hover:text-inherit"
                   }
                 >
-                  <HomeIcon className="mr-2 h-4 w-4" />
                   Home
                 </NavLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
+              </Button>
+            </li>
+            <li>
+              <Button variant="link" className="hover:no-underline">
                 <NavLink
                   to="/movies"
                   className={({ isActive }) =>
                     isActive
-                      ? buttonVariants({ variant: "default" })
-                      : buttonVariants({ variant: "outline" })
+                      ? ""
+                      : "text-muted-foreground transition hover:text-inherit"
                   }
                 >
-                  <VideoIcon className="mr-2 h-4 w-4" />
                   Movies
                 </NavLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+              </Button>
+            </li>
+          </ul>
+
           <ModeToggle />
         </nav>
       </header>

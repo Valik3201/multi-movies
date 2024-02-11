@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { Badge } from "@/components/ui/badge";
 
-const MovieItem = ({ movie }) => {
+const MediaItem = ({ movie }) => {
   return (
     <Link
       to={
@@ -56,4 +56,4 @@ const MovieItem = ({ movie }) => {
   );
 };
 
-export default MovieItem;
+export default MediaItem;

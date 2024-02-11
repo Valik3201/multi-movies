@@ -21,7 +21,7 @@ import Cast from "@/components/Cast";
 import Reviews from "@/components/Reviews";
 import Similar from "@/components/Similar";
 
-const MovieDetails = ({ mediaType }) => {
+const MediaDetails = ({ mediaType }) => {
   const { movieId, seriesId } = useParams();
 
   const { isPending, isError, data, error } = useQuery({
@@ -166,4 +166,4 @@ const MovieDetails = ({ mediaType }) => {
   );
 };
 
-export default MovieDetails;
+export default MediaDetails;

@@ -27,7 +27,7 @@ import { AlertDestructive, AlertInfo } from "@/components/Alert";
 
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
-import MovieItem from "@/components/MovieItem";
+import MediaItem from "@/components/MediaItem";
 
 const Movies = () => {
   const searchInputRef = useRef(null);
@@ -35,10 +35,6 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const form = useForm();
-
-  const handleYearChange = (value) => {
-    setSelectedYear(value);
-  };
 
   const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ["searchMovies"],
@@ -94,6 +90,7 @@ const Movies = () => {
   useEffect(() => {
     const q = searchParams.get("query") || "";
     const year = searchParams.get("year") || "";
+
     searchInputRef.current.value = q;
     setSelectedYear(year);
   }, [searchParams]);
@@ -165,9 +162,9 @@ const Movies = () => {
         <AlertInfo />
       )}
       {data && !isLoading && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {data?.map((movie) => (
-            <MovieItem movie={movie} key={movie.id} />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {data.results.map((movie) => (
+            <MediaItem movie={movie} key={movie.id} />
           ))}
         </div>
       )}

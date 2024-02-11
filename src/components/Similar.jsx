@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Loader } from "@/components/Loader";
 import { AlertDestructive, AlertNoSimilarMedia } from "@/components/Alert";
 import { fetchSimilarMovies } from "@/services/fetchSimilarMovies";
-import MovieItem from "./MovieItem";
+import MovieItem from "./MediaItem";
 import {
   Carousel,
   CarouselContent,

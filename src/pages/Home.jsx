@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
 import { fetchTrendingData } from "@/services/fetchTrendingData";
 
-import MovieItem from "@/components/MovieItem";
+import MediaItem from "@/components/MediaItem";
 import { AlertDestructive } from "@/components/Alert";
 
 import {
@@ -108,9 +108,10 @@ const Home = () => {
 
       <div className="grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {data.results.map((movie) => (
-          <MovieItem movie={movie} key={movie.id} />
+          <MediaItem movie={movie} key={movie.id} />
         ))}
       </div>
+
       <Pagination className="pt-8">
         <PaginationContent>
           <PaginationItem>
