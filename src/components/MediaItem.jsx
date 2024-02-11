@@ -23,7 +23,7 @@ const MediaItem = ({ movie }) => {
                   }`
             }
             alt={movie.title || movie.name}
-            className="h-auto w-auto object-cover transition-all hover:scale-105"
+            className="h-auto w-auto object-cover transition-all hover:scale-105 aspect-[2/3]"
           />
         </div>
         {movie.media_type && (
