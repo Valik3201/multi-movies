@@ -20,6 +20,7 @@ import {
 
 import Cast from "@/components/Cast";
 import Reviews from "@/components/Reviews";
+import SimilarMovies from "@/components/SimilarMovies";
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -123,6 +124,8 @@ const MovieDetails = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+
+      <SimilarMovies />
     </div>
   );
 };

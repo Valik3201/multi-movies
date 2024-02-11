@@ -127,7 +127,7 @@ const Home = () => {
               </PaginationLink>
             </PaginationItem>
           ))}
-          <PaginationItem>
+          <PaginationItem className="hidden md:block">
             <PaginationEllipsis />
           </PaginationItem>
           <PaginationItem>

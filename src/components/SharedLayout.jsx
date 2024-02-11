@@ -3,22 +3,26 @@ import { Outlet, NavLink } from "react-router-dom";
 
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
 import { buttonVariants } from "@/components/ui/button";
 
 import { HomeIcon, VideoIcon } from "@radix-ui/react-icons";
 import { Loader } from "./Loader";
+import Footer from "./Footer";
 
 import ModeToggle from "./mode-toggle";
 
 export const SharedLayout = () => {
   return (
-    <div className="container md:mx-auto pb-8 max-w-5xl">
+    <div className="container md:mx-auto max-w-5xl">
       <header className="py-8">
-        <nav>
+        <nav className="flex justify-between">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -47,17 +51,17 @@ export const SharedLayout = () => {
                   Movies
                 </NavLink>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <ModeToggle />
-              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+          <ModeToggle />
         </nav>
       </header>
 
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
+
+      <Footer />
     </div>
   );
 };
