@@ -6,7 +6,9 @@ const MovieItem = ({ movie }) => {
   return (
     <Link
       to={
-        movie.media_type === "movie" ? `/movies/${movie.id}` : `/tv/${movie.id}`
+        movie.media_type && movie.media_type === "tv"
+          ? `/tv/${movie.id}`
+          : `/movies/${movie.id}`
       }
       key={movie.id}
     >

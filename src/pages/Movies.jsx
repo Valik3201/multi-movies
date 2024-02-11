@@ -123,7 +123,7 @@ const Movies = () => {
             control={form.control}
             name="year"
             render={({ field }) => (
-              <FormItem className="flex flex-grow">
+              <FormItem className="flex flex-grow min-w-44">
                 <Select
                   onValueChange={(value) => {
                     field.onChange(value);
@@ -132,7 +132,7 @@ const Movies = () => {
                   value={selectedYear}
                 >
                   <FormControl>
-                    <SelectTrigger className="flex-grow">
+                    <SelectTrigger>
                       <SelectValue placeholder="Select released year" />
                     </SelectTrigger>
                   </FormControl>
@@ -153,7 +153,7 @@ const Movies = () => {
             <RotateCcwIcon className="mr-2 h-4 w-4" /> Reset
           </Button>
 
-          <Button type="submit" className="w-full md:w-fit">
+          <Button type="submit" className="flex flex-auto">
             <MagnifyingGlassIcon className="mr-2 h-4 w-4" />
             Search
           </Button>
@@ -161,7 +161,9 @@ const Movies = () => {
       </Form>
       {isLoading && <Loader />}
       {isError && <AlertDestructive message={error.message} />}
-      {searchParams.has("query") && data?.length === 0 && <AlertInfo />}
+      {!isLoading && searchParams.has("query") && data?.length === 0 && (
+        <AlertInfo />
+      )}
       {data && !isLoading && (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {data?.map((movie) => (
