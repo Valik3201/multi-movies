@@ -1,9 +1,9 @@
 import {
   ExclamationTriangleIcon,
   InfoCircledIcon,
-} from '@radix-ui/react-icons';
+} from "@radix-ui/react-icons";
 
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export const AlertDestructive = ({ message }) => {
   return (
@@ -47,6 +47,18 @@ export const AlertNoReviews = () => {
       <AlertTitle>No Reviews Yet</AlertTitle>
       <AlertDescription>
         There are currently no reviews available for this movie.
+      </AlertDescription>
+    </Alert>
+  );
+};
+
+export const AlertNoSimilarMedia = () => {
+  return (
+    <Alert className="max-w-2xl mt-8" type="warning">
+      <InfoCircledIcon className="h-4 w-4 text-yellow-500" />
+      <AlertTitle>No Similar Movies or TV Shows</AlertTitle>
+      <AlertDescription>
+        There are currently no similar movies or TV shows available.
       </AlertDescription>
     </Alert>
   );

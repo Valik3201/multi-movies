@@ -6,12 +6,13 @@ import { fetchCast } from "@/services/fetchCast";
 import { Loader } from "@/components/Loader";
 import { AlertDestructive, AlertNoCast } from "@/components/Alert";
 
-const Cast = () => {
-  const { movieId } = useParams();
+const Cast = ({ mediaType }) => {
+  const { movieId, seriesId } = useParams();
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["cast", movieId],
-    queryFn: () => fetchCast(movieId),
+    queryKey: ["cast", mediaType === "tv" ? seriesId : movieId],
+    queryFn: () =>
+      fetchCast(mediaType === "tv" ? seriesId : movieId, mediaType),
   });
 
   if (isLoading) {

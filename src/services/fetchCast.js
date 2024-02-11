@@ -1,8 +1,8 @@
-import { axios, baseOptions } from './api';
+import { axios, baseOptions } from "./api";
 
-const fetchCast = async movie_id => {
+const fetchCast = async (media_id, mediaType) => {
   const { data } = await axios.get(
-    `/movie/${movie_id}/credits?language=en-US`,
+    `/${mediaType}/${media_id}/credits?language=en-US`,
     baseOptions
   );
 

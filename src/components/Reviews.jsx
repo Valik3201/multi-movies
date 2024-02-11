@@ -18,12 +18,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const Reviews = () => {
-  const { movieId } = useParams();
+const Reviews = ({ mediaType }) => {
+  const { movieId, seriesId } = useParams();
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["reviews", movieId],
-    queryFn: () => fetchReviews(movieId),
+    queryKey: ["reviews", mediaType === "tv" ? seriesId : movieId],
+    queryFn: () =>
+      fetchReviews(mediaType === "tv" ? seriesId : movieId, mediaType),
   });
 
   if (isLoading) {

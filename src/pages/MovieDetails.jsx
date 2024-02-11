@@ -1,10 +1,9 @@
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { Suspense } from "react";
 
 import { format } from "date-fns";
 
-import { fetchMovieDetails } from "@/services/fetchMovieDetails";
+import { fetchMediaDetails } from "@/services/fetchMediaDetails";
 
 import { Badge } from "@/components/ui/badge";
 
@@ -20,14 +19,15 @@ import {
 
 import Cast from "@/components/Cast";
 import Reviews from "@/components/Reviews";
-import SimilarMovies from "@/components/SimilarMovies";
+import Similar from "@/components/Similar";
 
-const MovieDetails = () => {
-  const { movieId } = useParams();
+const MovieDetails = ({ mediaType }) => {
+  const { movieId, seriesId } = useParams();
 
   const { isPending, isError, data, error } = useQuery({
-    queryKey: ["movieDetails", movieId],
-    queryFn: () => fetchMovieDetails(movieId),
+    queryKey: ["movieDetails", mediaType === "tv" ? seriesId : movieId],
+    queryFn: () =>
+      fetchMediaDetails(mediaType === "tv" ? seriesId : movieId, mediaType),
   });
 
   if (isPending) {
@@ -37,6 +37,8 @@ const MovieDetails = () => {
   if (isError) {
     return <AlertDestructive message={error.message} />;
   }
+
+  console.debug(data);
 
   return (
     <div>
@@ -53,22 +55,37 @@ const MovieDetails = () => {
         <div className="col-span-2 flex flex-col gap-4">
           <div>
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-              {data.title}
+              {mediaType === "tv" ? data.name : data.title}
             </h1>
 
-            {data.original_language !== "en" && (
+            {mediaType === "tv" && data.original_language !== "en" && (
+              <h2 className="scroll-m-20 pt-2 text-3xl text-muted-foreground font-semibold tracking-tight first:mt-0">
+                {data.original_name}
+              </h2>
+            )}
+
+            {mediaType !== "tv" && data.original_language !== "en" && (
               <h2 className="scroll-m-20 pt-2 text-3xl text-muted-foreground font-semibold tracking-tight first:mt-0">
                 {data.original_title}
               </h2>
             )}
           </div>
 
-          <p className="text-md font-semibold">
-            Realese date:{" "}
-            <span className="text-muted-foreground">
-              {format(new Date(data.release_date), "MMMM d, yyyy")}
-            </span>
-          </p>
+          {mediaType === "tv" ? (
+            <p className="text-md font-semibold">
+              First air date:{" "}
+              <span className="text-muted-foreground">
+                {format(new Date(data.first_air_date), "MMMM d, yyyy")}
+              </span>
+            </p>
+          ) : (
+            <p className="text-md font-semibold">
+              Realese date:{" "}
+              <span className="text-muted-foreground">
+                {format(new Date(data.release_date), "MMMM d, yyyy")}
+              </span>
+            </p>
+          )}
 
           {data.tagline && (
             <blockquote className="border-l-2 pl-6 italic">
@@ -131,7 +148,7 @@ const MovieDetails = () => {
             <NavLink to="cast">Cast</NavLink>
           </AccordionTrigger>
           <AccordionContent>
-            <Cast />
+            <Cast mediaType={mediaType} />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="reviews">
@@ -139,12 +156,12 @@ const MovieDetails = () => {
             <NavLink to="reviews">Reviews</NavLink>
           </AccordionTrigger>
           <AccordionContent>
-            <Reviews />
+            <Reviews mediaType={mediaType} />
           </AccordionContent>
         </AccordionItem>
       </Accordion>
 
-      <SimilarMovies />
+      <Similar mediaType={mediaType} />
     </div>
   );
 };

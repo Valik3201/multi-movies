@@ -4,7 +4,12 @@ import { Badge } from "@/components/ui/badge";
 
 const MovieItem = ({ movie }) => {
   return (
-    <Link to={`/movies/${movie.id}`} key={movie.id}>
+    <Link
+      to={
+        movie.media_type === "movie" ? `/movies/${movie.id}` : `/tv/${movie.id}`
+      }
+      key={movie.id}
+    >
       <div className="flex flex-col gap-2">
         <div className="overflow-hidden rounded-lg">
           <img
@@ -21,9 +26,15 @@ const MovieItem = ({ movie }) => {
         </div>
         {movie.media_type && (
           <div className="flex-none">
-            <Badge>
-              {movie.media_type.charAt(0).toUpperCase() +
-                movie.media_type.slice(1)}
+            <Badge
+              className={
+                movie.media_type === "tv" ? "bg-lime-400 text-black" : ""
+              }
+            >
+              {movie.media_type === "tv"
+                ? "TV"
+                : movie.media_type.charAt(0).toUpperCase() +
+                  movie.media_type.slice(1)}
             </Badge>
           </div>
         )}

@@ -1,8 +1,8 @@
-import { axios, baseOptions } from './api';
+import { axios, baseOptions } from "./api";
 
-const fetchReviews = async movie_id => {
+const fetchReviews = async (media_id, mediaType) => {
   const { data } = await axios.get(
-    `/movie/${movie_id}/reviews?language=en-US`,
+    `/${mediaType}/${media_id}/reviews?language=en-US`,
     baseOptions
   );
 
