@@ -31,7 +31,7 @@ const SimilarMovies = () => {
   return (
     <>
       <h2 className="scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-4xl pb-8">
-        Similar Movies
+        More like this
       </h2>
 
       <Carousel>

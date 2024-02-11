@@ -103,6 +103,25 @@ const MovieDetails = () => {
               </ul>
             ))}
           </div>
+
+          <div className="flex flex-row flex-wrap gap-4">
+            {data.production_companies.map((company) => (
+              <ul
+                key={company.id}
+                className="flex flex-wrap gap-2 items-center"
+              >
+                {company.logo_path && (
+                  <li>
+                    <img
+                      src={`https://image.tmdb.org/t/p/original${company.logo_path}`}
+                      alt={company.name}
+                      className="h-6"
+                    />
+                  </li>
+                )}
+              </ul>
+            ))}
+          </div>
         </div>
       </div>
 
