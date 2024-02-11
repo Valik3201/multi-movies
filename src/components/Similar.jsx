@@ -29,8 +29,6 @@ const Similar = ({ mediaType }) => {
     return <AlertDestructive message={error.message} />;
   }
 
-  console.debug(data);
-
   return (
     <>
       <h2 className="scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-4xl">
