@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Loader } from "./Loader";
 import Footer from "./Footer";
 
-import ModeToggle from "./mode-toggle";
+import ModeToggle from "./ModeToggle";
 
 export const SharedLayout = () => {
   return (
