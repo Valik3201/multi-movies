@@ -1,6 +1,6 @@
-# Movie Search
+# Multi Movies
 
-This repository contains a basic routing application for movie search and storage, utilizing the themoviedb.org API for movie data retrieval.
+Multi Movies is a React application powered by the themoviedb.org API. It is built with Vite for rapid development, deployed on Vercel for seamless hosting, and utilizes Tanstack Query, shadcn/ui, and Tailwind CSS for functionality and styling. The application offers a collection of trending movies and TV shows, with search capabilities allowing users to find specific titles. Additionally, the detailed page for each movie or TV show provides essential information, including cast details, reviews, and recommendations for similar movies or TV shows.
 
 ## Backend
 
@@ -10,10 +10,10 @@ The backend of this application utilizes the version 3 of The Movie Database (TM
 
 Base URL: `https://api.themoviedb.org/3`
 
-### Trending Movies
+### Trending Movies and TV Shows
 
 ```
-GET /trending/movie/{time_window}
+GET /trending/all/{time_window}
 ```
 
 | Parameter   | Type   | Description                                     |
@@ -61,17 +61,40 @@ GET /movie/{movie_id}/reviews
 | --------- | ----- | ---------------------- |
 | movie_id  | int32 | Unique ID of the movie |
 
+### TV Show Details
+
+```
+GET tv/{series_id}
+```
+
+| Parameter | Type  | Description                 |
+| --------- | ----- | --------------------------- |
+| series_id | int32 | Unique ID of the tv series  |
+
+### Similar Movies or TV Shows
+
+```
+GET tv/{series_id}/similar
+```
+```
+GET movie/{movie_id}/similar
+```
+
+| Parameter | Type  | Description                 |
+| --------- | ----- | --------------------------- |
+| series_id | int32 | Unique ID of the tv series  |
+| movie_id  | int32 | Unique ID of the movie      |
+
 ## Routes
 
 This application consists of the following routes. If a user attempts to access a non-existent route, they will be redirected to the home page.
 
-| Route                      | Component    | Description                                        |
-| -------------------------- | ------------ | -------------------------------------------------- |
-| `/`                        | Home         | Home page with a list of popular movies            |
-| `/movies`                  | Movies       | Page for movie search by keyword                   |
-| `/movies/:movieId`         | MovieDetails | Detailed information about a specific movie        |
-| `/movies/:movieId/cast`    | Cast         | Information about the cast of a specific movie     |
-| `/movies/:movieId/reviews` | Reviews      | Information about the reviews for a specific movie |
+| Route                      | Component    | Description                                          |
+| -------------------------- | ------------ | ---------------------------------------------------- |
+| `/`                        | Home         | Home page with a list of popular movies and TV shows |
+| `/movies`                  | Movies       | Page for movie search by keyword                     |
+| `/movies/:movieId`         | MediaDetails | Detailed information about a specific movie          |
+| `/tv/:seriesId`            | MediaDetails | Detailed information about a specific TV show        |
 
 ## Code Splitting
 
@@ -120,17 +143,14 @@ In this project, the following components from the `shadcn/ui` library are utili
 - **Button:** Utilized for interactive elements such as buttons that trigger actions or navigation.
 - **Card:** Used for displaying content in a structured and visually appealing manner.
 - **Input:** Employed for capturing user input through forms or search fields.
-- **Navigation Menu:** Utilized for creating navigation menus or sidebars for easy access to different sections of the application.
+and more.
+
+> [!WARNING]
+> The `shadcn/ui` Select component does not function correctly in the Safari browser on mobile devices.
 
 ### Tailwind CSS Integration
 
 Tailwind CSS is used for utility-based styling throughout the project. This includes defining styles for layout, typography, colors, and more by applying utility classes directly to HTML elements.
-
-To watch for changes and rebuild the CSS when necessary, the following command can be run:
-
-```bash
-npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
-```
 
 By combining `shadcn/ui` for UI components and Tailwind CSS for utility-based styling, this project benefits from a streamlined development process, allowing for faster iteration and consistent design patterns throughout the application.
 
