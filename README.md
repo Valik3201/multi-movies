@@ -138,12 +138,18 @@ Styling for this project is achieved using the `shadcn/ui` library for UI compon
 
 In this project, the following components from the `shadcn/ui` library are utilized:
 
-- **Alert:** Used for displaying informative or error messages to users.
-- **Badge:** Employed for indicating status or labeling elements with small, contextual notifications.
-- **Button:** Utilized for interactive elements such as buttons that trigger actions or navigation.
-- **Card:** Used for displaying content in a structured and visually appealing manner.
-- **Input:** Employed for capturing user input through forms or search fields.
-and more.
+- **Accordion.jsx:** A vertically stacked set of interactive headings that each reveal a section of content.
+- **Alert.jsx:** Displays a callout for user attention.
+- **Badge.jsx:** Displays a badge or a component that looks like a badge.
+- **Button.jsx:** Displays a button or a component that looks like a button.
+- **Card.jsx:** Displays a card with header, content, and footer.
+- **Carousel.jsx:** A carousel with motion and swipe built using Embla.
+- **DropdownMenu.jsx:** Displays a menu to the user — such as a set of actions or functions — triggered by a button (for theme toggle).
+- **Form.jsx:** The `<Form />` component is a wrapper around the react-hook-form library.
+- **Input.jsx:** Displays a form input field or a component that looks like an input field.
+- **Pagination.jsx:** Pagination with page navigation, next and previous links.
+- **Select.jsx:** Displays a list of options for the user to pick from—triggered by a button.
+- **Skeleton.jsx:** Used to show a placeholder while content is loading.
 
 > [!WARNING]
 > The `shadcn/ui` Select component does not function correctly in the Safari browser on mobile devices.
