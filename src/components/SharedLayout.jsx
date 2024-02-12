@@ -13,7 +13,7 @@ export const SharedLayout = () => {
     <div className="container md:mx-auto max-w-5xl">
       <header className="pb-8">
         <nav className="flex justify-between border-b py-4">
-          <ul className="flex flex-wrap items-center mt-3 text-md font-medium sm:mt-0">
+          <ul className="flex flex-wrap items-center text-md font-medium sm:mt-0">
             <li>
               <Button variant="link" className="pl-0 hover:no-underline">
                 <NavLink

@@ -37,22 +37,24 @@ const Similar = ({ mediaType }) => {
 
       {!isLoading && data.results.length === 0 && <AlertNoSimilarMedia />}
 
-      {data.results.length !== 0 && (
-        <Carousel className="pt-8">
-          <CarouselContent>
-            {data.results.map((movie) => (
-              <CarouselItem
-                key={movie.id}
-                className="md:basis-1/2 lg:basis-1/5"
-              >
-                <MovieItem movie={movie} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      )}
+      <div className="container">
+        {data.results.length !== 0 && (
+          <Carousel className="pt-8">
+            <CarouselContent>
+              {data.results.map((movie) => (
+                <CarouselItem
+                  key={movie.id}
+                  className="md:basis-1/2 lg:basis-1/5"
+                >
+                  <MovieItem movie={movie} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        )}
+      </div>
     </>
   );
 };

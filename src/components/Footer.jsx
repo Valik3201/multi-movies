@@ -15,7 +15,7 @@ const Footer = () => {
         </span>
         <ul className="flex flex-wrap items-center mt-3 text-sm font-medium sm:mt-0">
           <li>
-            <Button variant="link">
+            <Button variant="link" className="pl-0">
               <a href="/">Home</a>
             </Button>
           </li>
