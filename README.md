@@ -2,6 +2,13 @@
 
 Multi Movies is a React application powered by the themoviedb.org API. It is built with Vite for rapid development, deployed on Vercel for seamless hosting, and utilizes Tanstack Query, shadcn/ui, and Tailwind CSS for functionality and styling. The application offers a collection of trending movies and TV shows, with search capabilities allowing users to find specific titles. Additionally, the detailed page for each movie or TV show provides essential information, including cast details, reviews, and recommendations for similar movies or TV shows.
 
+![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat)
+![Vite Badge](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff&style=flat)
+![Vercel Badge](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=fff&style=flat)
+![Axios Badge](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=fff&style=flat)
+![shadcn/ui Badge](https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+
 ## Backend
 
 The backend of this application utilizes the version 3 of The Movie Database (TMDB) API to fetch movie-related data.
