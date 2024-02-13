@@ -27,8 +27,8 @@ const Cast = ({ mediaType }) => {
     <>
       {!isLoading && data.length === 0 && <AlertNoCast />}
       <div className="grid grid-cols-4 sm:grid-cols-6 gap-4 max-w-5xl py-4 text-xs">
-        {data.map((actor) => (
-          <ul key={actor.id}>
+        <ul key={actor.id}>
+          {data.map((actor) => (
             <li>
               <img
                 src={
@@ -42,8 +42,8 @@ const Cast = ({ mediaType }) => {
               <p className="font-bold">{actor.name}</p>
               <p className="text-muted-foreground">{actor.character}</p>
             </li>
-          </ul>
-        ))}
+          ))}
+        </ul>
       </div>
     </>
   );
