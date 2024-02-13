@@ -1,5 +1,10 @@
 # Multi Movies
 
+<p float="left">
+  <img src="/assets/mm-1.jpeg" width="49.7%" />
+  <img src="/assets/mm-4.jpeg" width="49.7%" /> 
+</p>
+
 Multi Movies is a React application powered by the themoviedb.org API. It is built with Vite for rapid development, deployed on Vercel for seamless hosting, and utilizes Tanstack Query, shadcn/ui, and Tailwind CSS for functionality and styling. The application offers a collection of trending movies and TV shows, with search capabilities allowing users to find specific titles. Additionally, the detailed page for each movie or TV show provides essential information, including cast details, reviews, and recommendations for similar movies or TV shows.
 
 ![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat)
@@ -193,3 +198,8 @@ import "non.geist/mono";
 The decision to use `non.geist` is driven by the need for simplicity and convenience. While it's relatively straightforward to implement font faces using CSS, managing fonts as dependencies can add complexity to the project setup. non.geist simplifies this process, providing a hassle-free solution for incorporating Vercel's typefaces into non-Next.js projects.
 
 This package offers a convenient alternative for developers who prefer the flexibility and ease of managing fonts through a package rather than manually handling font assets and dependencies.
+
+
+  <img src="/assets/mm-2.jpeg"/>
+  <img src="/assets/mm-3.jpeg"/> 
+
