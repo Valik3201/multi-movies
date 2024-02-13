@@ -13,9 +13,9 @@ export const SharedLayout = () => {
     <div className="container md:mx-auto max-w-5xl">
       <header className="pb-8">
         <nav className="flex justify-between border-b py-4">
-          <ul className="flex flex-wrap items-center text-md font-medium sm:mt-0">
+          <ul className="flex flex-wrap gap-8 items-center text-md font-medium sm:mt-0">
             <li>
-              <Button variant="link" className="pl-0 hover:no-underline">
+              <Button variant="link" className="p-0 hover:no-underline">
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
@@ -29,7 +29,7 @@ export const SharedLayout = () => {
               </Button>
             </li>
             <li>
-              <Button variant="link" className="hover:no-underline">
+              <Button variant="link" className="p-0 hover:no-underline">
                 <NavLink
                   to="/movies"
                   className={({ isActive }) =>

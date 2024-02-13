@@ -13,19 +13,19 @@ const Footer = () => {
           </Button>
           . All Rights Reserved.
         </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium sm:mt-0">
+        <ul className="flex flex-wrap gap-4 items-center mt-3 text-sm font-medium sm:mt-0">
           <li>
-            <Button variant="link" className="pl-0">
+            <Button variant="link" className="p-0">
               <a href="/">Home</a>
             </Button>
           </li>
           <li>
-            <Button variant="link">
+            <Button variant="link" className="p-0">
               <a href="/movies">Movies</a>
             </Button>
           </li>
           <li>
-            <Button variant="link">
+            <Button variant="link" className="p-0">
               <a
                 href="https://github.com/Valik3201/multi-movies"
                 target="_blank"
@@ -35,14 +35,14 @@ const Footer = () => {
             </Button>
           </li>
           <li>
-            <Button variant="link">
+            <Button variant="link" className="p-0">
               <a href="https://github.com/Valik3201" target="_blank">
                 Contact
               </a>
             </Button>
           </li>
           <li>
-            <Button variant="link">
+            <Button variant="link" className="p-0">
               <a
                 href="https://developer.themoviedb.org/reference/intro/getting-started"
                 target="_blank"
