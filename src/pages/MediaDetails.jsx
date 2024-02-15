@@ -21,6 +21,13 @@ import Cast from "@/components/Cast";
 import Reviews from "@/components/Reviews";
 import Similar from "@/components/Similar";
 
+/**
+ * Component for rendering the details of a movie or TV show.
+ * Fetches media details based on the provided media type and ID.
+ * Provides tabs for navigating between cast, reviews, and similar content.
+ * @param {string} mediaType - The type of media (e.g., "movie" or "tv").
+ * @returns {JSX.Element} The JSX representation of the MediaDetails component.
+ */
 const MediaDetails = ({ mediaType }) => {
   const { movieId, seriesId } = useParams();
 

@@ -12,6 +12,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+/**
+ * Similar component displays movies or TV shows similar to the current one.
+ * @param {Object} props - Component props.
+ * @param {string} props.mediaType - The type of media ("movie" or "tv").
+ * @returns {JSX.Element} - JSX element representing the Similar component.
+ */
 const Similar = ({ mediaType }) => {
   const { movieId, seriesId } = useParams();
 

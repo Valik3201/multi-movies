@@ -29,6 +29,12 @@ import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 import MediaItem from "@/components/MediaItem";
 
+/**
+ * Component for searching movies based on title and release year.
+ * Displays a form with inputs for title search and year selection.
+ * Renders search results in a grid of MediaItem components.
+ * @returns {JSX.Element} The JSX representation of the Movies component.
+ */
 const Movies = () => {
   const searchInputRef = useRef(null);
   const [selectedYear, setSelectedYear] = useState("");

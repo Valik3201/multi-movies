@@ -18,6 +18,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+/**
+ * Reviews component displays reviews for a specific movie or TV show.
+ * @param {string} mediaType - The type of media (movie or TV show).
+ * @returns {JSX.Element} - JSX element representing the Reviews component.
+ */
 const Reviews = ({ mediaType }) => {
   const { movieId, seriesId } = useParams();
 

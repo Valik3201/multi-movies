@@ -5,6 +5,11 @@ import {
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
+/**
+ * Component for rendering a destructive alert.
+ * @param {string} message - The error message to display.
+ * @returns {JSX.Element} The JSX representation of the AlertDestructive component.
+ */
 export const AlertDestructive = ({ message }) => {
   return (
     <Alert variant="destructive" className="max-w-2xl">
@@ -15,6 +20,10 @@ export const AlertDestructive = ({ message }) => {
   );
 };
 
+/**
+ * Component for rendering an informational alert indicating no search results.
+ * @returns {JSX.Element} The JSX representation of the AlertInfo component.
+ */
 export const AlertInfo = () => {
   return (
     <Alert className="max-w-2xl">
@@ -28,6 +37,10 @@ export const AlertInfo = () => {
   );
 };
 
+/**
+ * Component for rendering an alert indicating no cast information available.
+ * @returns {JSX.Element} The JSX representation of the AlertNoCast component.
+ */
 export const AlertNoCast = () => {
   return (
     <Alert className="max-w-2xl mt-8">
@@ -40,6 +53,10 @@ export const AlertNoCast = () => {
   );
 };
 
+/**
+ * Component for rendering an alert indicating no reviews available.
+ * @returns {JSX.Element} The JSX representation of the AlertNoReviews component.
+ */
 export const AlertNoReviews = () => {
   return (
     <Alert className="max-w-2xl mt-8">
@@ -52,6 +69,10 @@ export const AlertNoReviews = () => {
   );
 };
 
+/**
+ * Component for rendering an alert indicating no similar movies or TV shows available.
+ * @returns {JSX.Element} The JSX representation of the AlertNoSimilarMedia component.
+ */
 export const AlertNoSimilarMedia = () => {
   return (
     <Alert className="max-w-2xl mt-8" type="warning">

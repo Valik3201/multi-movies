@@ -16,6 +16,11 @@ import {
 } from "@/components/ui/pagination";
 import { Skeleton } from "@/components/ui/skeleton";
 
+/**
+ * Component for rendering the home page with trending movies and TV shows.
+ * Provides pagination functionality for browsing through trending items.
+ * @returns {JSX.Element} The JSX representation of the Home component.
+ */
 const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const page = searchParams.get("page") || "1";

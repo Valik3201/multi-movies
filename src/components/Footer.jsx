@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
 
+/**
+ * Footer component containing links and copyright information.
+ * @returns {JSX.Element} The JSX representation of the Footer component.
+ */
 const Footer = () => {
   return (
     <footer className="border-t mt-8">
@@ -7,7 +11,11 @@ const Footer = () => {
         <span className="text-sm sm:text-center">
           © 2024{" "}
           <Button variant="link" className="p-0 m-0">
-            <a href="https://github.com/Valik3201/multi-movies" target="_blank">
+            <a
+              href="https://github.com/Valik3201/multi-movies"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Multi Movies
             </a>
           </Button>
@@ -29,6 +37,7 @@ const Footer = () => {
               <a
                 href="https://github.com/Valik3201/multi-movies"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </a>
@@ -36,7 +45,11 @@ const Footer = () => {
           </li>
           <li>
             <Button variant="link" className="p-0">
-              <a href="https://github.com/Valik3201" target="_blank">
+              <a
+                href="https://github.com/Valik3201"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Contact
               </a>
             </Button>
@@ -46,6 +59,7 @@ const Footer = () => {
               <a
                 href="https://developer.themoviedb.org/reference/intro/getting-started"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 API
               </a>

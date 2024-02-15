@@ -8,6 +8,11 @@ import Footer from "./Footer";
 
 import ModeToggle from "./ModeToggle";
 
+/**
+ * SharedLayout component represents the layout shared across multiple pages.
+ * It includes a navigation bar, mode toggle, and footer.
+ * @returns {JSX.Element} - JSX element representing the SharedLayout component.
+ */
 export const SharedLayout = () => {
   return (
     <div className="container md:mx-auto max-w-5xl">

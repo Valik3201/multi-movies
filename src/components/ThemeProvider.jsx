@@ -1,17 +1,21 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
+// Create a context for the theme provider
 const ThemeProviderContext = createContext();
 
+// ThemeProvider component manages the theme state and provides it to its children
 export function ThemeProvider({
   children,
   defaultTheme = "system",
   storageKey = "vite-ui-theme",
   ...props
 }) {
+  // State to store the current theme
   const [theme, setTheme] = useState(
     () => localStorage.getItem(storageKey) || defaultTheme
   );
 
+  // Effect to update the theme class on the root element whenever the theme changes
   useEffect(() => {
     const root = window.document.documentElement;
 
@@ -28,6 +32,7 @@ export function ThemeProvider({
     }
   }, [theme]);
 
+  // Value object containing the theme state and setter function
   const value = {
     theme,
     setTheme: (theme) => {
@@ -36,6 +41,7 @@ export function ThemeProvider({
     },
   };
 
+  // Provide the theme context to its children
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
       {children}
@@ -43,6 +49,7 @@ export function ThemeProvider({
   );
 }
 
+// Custom hook to access the current theme and set the theme
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
 

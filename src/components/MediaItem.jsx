@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 
 import { Badge } from "@/components/ui/badge";
 
+/**
+ * MediaItem component to display information about a movie or TV show.
+ * @param {Object} props - The props object.
+ * @param {Object} props.movie - The movie object containing information to display.
+ * @returns {JSX.Element} The JSX representation of the MediaItem component.
+ */
 const MediaItem = ({ movie }) => {
   return (
     <Link
