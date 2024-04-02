@@ -11,11 +11,7 @@ import { Badge } from "@/components/ui/badge";
 const MediaItem = ({ movie }) => {
   return (
     <Link
-      to={
-        movie.media_type && movie.media_type === "tv"
-          ? `/tv/${movie.id}`
-          : `/movies/${movie.id}`
-      }
+      to={movie.first_air_date ? `/tv/${movie.id}` : `/movies/${movie.id}`}
       key={movie.id}
     >
       <div className="flex flex-col gap-2">
