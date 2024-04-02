@@ -35,8 +35,8 @@ const Cast = ({ mediaType }) => {
     <>
       {/* Display alert if no cast information is available */}
       {!isLoading && data.length === 0 && <AlertNoCast />}
-      <div className="grid grid-cols-4 sm:grid-cols-6 gap-4 max-w-5xl py-4 text-xs">
-        <ul>
+      <div className="max-w-5xl py-4 text-xs">
+        <ul className="grid grid-cols-4 sm:grid-cols-6 gap-4">
           {/* Map over cast data and display each actor */}
           {data.map((actor) => (
             <li key={actor.id}>
