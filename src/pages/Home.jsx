@@ -46,7 +46,7 @@ const Home = () => {
     return (
       <>
         <Skeleton className="h-96 w-full mb-8" />
-        <div className="grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {[...Array(20)].map((_, index) => (
             <div className="flex flex-col gap-2" key={index}>
               <Skeleton
@@ -96,7 +96,7 @@ const Home = () => {
   return (
     <div>
       <div
-        className="relative overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat min-h-96 p-12 text-center rounded-lg mb-8"
+        className="relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-96 p-12 text-center rounded-lg mb-8"
         style={{ backgroundImage: `url(${firstMoviePoster})` }}
       >
         <div
@@ -111,7 +111,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {data.results.map((movie) => (
           <MediaItem movie={movie} key={movie.id} />
         ))}
