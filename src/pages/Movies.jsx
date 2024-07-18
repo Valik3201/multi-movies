@@ -108,7 +108,7 @@ const Movies = () => {
       </h1>
       <Form {...form}>
         <form
-          className="flex flex-wrap gap-2 w-full items-start gap-2 pb-8"
+          className="flex flex-wrap gap-2 w-full items-start pb-8"
           onSubmit={handleSearch}
         >
           <FormItem className="flex flex-grow">
