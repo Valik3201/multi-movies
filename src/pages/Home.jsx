@@ -49,14 +49,11 @@ const Home = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {[...Array(20)].map((_, index) => (
             <div className="flex flex-col gap-2" key={index}>
-              <Skeleton
-                key={index}
-                className="h-[270px] w-[180px] rounded-lg"
-              />
+              <Skeleton key={index} className="h-[270px] w-full rounded-lg" />
 
               <Skeleton className="h-4 w-[56px]" />
 
-              <Skeleton className="h-4 w-[180px]" />
+              <Skeleton className="h-4 w-full" />
               <Skeleton className="h-4 w-[40px]" />
             </div>
           ))}
